@@ -120,7 +120,6 @@ namespace SignUpTests
             IWebElement signUpLink = driver.FindElement(By.CssSelector("a#qa_header-signup.auth-button.signup-button"));
             signUpLink.Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            //selector pt sign up link+click
             IWebElement firstNameField = driver.FindElement(By.XPath("//*[@id='first-name']"));
             firstNameField.SendKeys("Alex");
             IWebElement lastNameField = driver.FindElement(By.XPath("//*[@id='last-name']"));
@@ -133,7 +132,6 @@ namespace SignUpTests
             password2.SendKeys("Pinguin123");
             IWebElement signUpButton = driver.FindElement(By.XPath("//*[@id=' qa_loader - button']/span"));
             signUpButton.Click();
-            //de dat click sign in buton
             var strUrl = driver.Url;
             string expectedUrl = "https://politrip.com/account/sign-up/type-select";
             var isEqual = expectedUrl.Equals(strUrl);
